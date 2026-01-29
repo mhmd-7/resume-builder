@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional CV Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>📄 Professional CV Builder</h1>
+    <p>Create your professional resume in minutes</p>
+  </header>
+
+  <div class="container">
+    <!-- Form Section -->
+    <div class="form-section">
+      <!-- Profile Picture -->
+      <section class="form-group">
+        <h2>📸 Profile Picture</h2>
+        <div class="photo-upload">
+          <input type="file" id="profilePhoto" accept="image/*" class="input-field">
+          <div class="photo-preview" id="photoPreview">
+            <p>No image selected</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Information -->
+      <section class="form-group">
+        <h2>👤 Personal Information</h2>
+        <input type="text" id="fullName" placeholder="Full Name" class="input-field">
+        <input type="email" id="email" placeholder="Email Address" class="input-field">
+        <input type="tel" id="phone" placeholder="Phone Number" class="input-field">
+        <input type="text" id="location" placeholder="City, Country" class="input-field">
+        <textarea id="address" placeholder="Full Address (Optional)" class="input-field" rows="2"></textarea>
+      </section>
+
+      <!-- Professional Links -->
+      <section class="form-group">
+        <h2>🔗 Professional Links</h2>
+        <div id="linksContainer"></div>
+        <button class="btn-secondary" onclick="addLink()">+ Add Link</button>
+      </section>
+
+      <!-- Professional Summary -->
+      <section class="form-group">
+        <h2>📝 Professional Summary</h2>
+        <textarea id="summary" placeholder="Write a brief summary about yourself..." class="input-field" rows="4"></textarea>
+      </section>
+
+      <!-- Experience -->
+      <section class="form-group">
+        <h2>💼 Work Experience</h2>
+        <div id="experienceContainer"></div>
+        <button class="btn-secondary" onclick="addExperience()">+ Add Experience</button>
+      </section>
+
+      <!-- Education -->
+      <section class="form-group">
+        <h2>🎓 Education</h2>
+        <div id="educationContainer"></div>
+        <button class="btn-secondary" onclick="addEducation()">+ Add Education</button>
+      </section>
+
+      <!-- Skills -->
+      <section class="form-group">
+        <h2>🛠️ Skills</h2>
+        <input type="text" id="skills" placeholder="Skills (comma separated)" class="input-field">
+      </section>
+
+      <!-- Languages -->
+      <section class="form-group">
+        <h2>🌐 Languages</h2>
+        <div id="languagesContainer"></div>
+        <button class="btn-secondary" onclick="addLanguage()">+ Add Language</button>
+      </section>
+
+      <!-- Certificates -->
+      <section class="form-group">
+        <h2>🏆 Certificates & Awards</h2>
+        <div id="certificatesContainer"></div>
+        <button class="btn-secondary" onclick="addCertificate()">+ Add Certificate</button>
+      </section>
+
+      <!-- Projects -->
+      <section class="form-group">
+        <h2>📊 Projects</h2>
+        <div id="projectsContainer"></div>
+        <button class="btn-secondary" onclick="addProject()">+ Add Project</button>
+      </section>
+    </div>
+
+    <!-- CV Preview Section -->
+    <div class="cv-preview">
+      <div class="cv-content" id="cvPreview">
+        <div class="cv-header">
+          <div id="photoContainer" class="photo-container" style="display:none;">
+            <img id="previewPhoto" src="" alt="Profile Photo">
+          </div>
+          <h1 id="previewName">Your Name</h1>
+          <p id="previewContact"></p>
+          <div id="linksPreview" class="links-preview" style="display:none;"></div>
+        </div>
+
+        <section id="previewSummary" class="cv-section" style="display:none;">
+          <h3>Professional Summary</h3>
+          <p id="summaryText"></p>
+        </section>
+
+        <section id="previewExperience" class="cv-section" style="display:none;">
+          <h3>Work Experience</h3>
+          <div id="experiencePreview"></div>
+        </section>
+
+        <section id="previewEducation" class="cv-section" style="display:none;">
+          <h3>Education</h3>
+          <div id="educationPreview"></div>
+        </section>
+
+        <section id="previewSkills" class="cv-section" style="display:none;">
+          <h3>Skills</h3>
+          <div id="skillsPreview"></div>
+        </section>
+
+        <section id="previewLanguages" class="cv-section" style="display:none;">
+          <h3>Languages</h3>
+          <div id="languagesPreview"></div>
+        </section>
+
+        <section id="previewCertificates" class="cv-section" style="display:none;">
+          <h3>Certificates & Awards</h3>
+          <div id="certificatesPreview"></div>
+        </section>
+
+        <section id="previewProjects" class="cv-section" style="display:none;">
+          <h3>Projects</h3>
+          <div id="projectsPreview"></div>
+        </section>
+      </div>
+      <div class="button-group">
+        <button class="btn-primary" onclick="downloadCV()">📥 Download CV</button>
+        <button class="btn-print" onclick="printCV()">🖨️ Print CV</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
